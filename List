@@ -24,3 +24,14 @@ def strfunction(list1):
     for i in range(a):
         b+=list1[i]
     return b
+#字符串转置，换行输出
+def Graphics(spam):
+    a=len(spam)
+    b=len(spam[0])
+    j=0
+    while j<b:
+        print(end='\n')              ---换行输出简直要作死
+        for i in range(a):
+            print(spam[i][j],end='')
+        j+=1
+    
