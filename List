@@ -1,5 +1,26 @@
+#函数的目的是在已有的列表上添加列表值，然后由列表转换到字符串(列表值不能存在数字的)
 def listfunction(spam):
     a=len(spam)
     spam[a-1]='and '+spam[a-1]
     b=','.join(spam)
+    return b
+#如果列表值为数字，转换到字符串方法
+def listfunction(spam):
+    a=len(spam)
+    s=''
+    n=0
+    while n<a:
+        s+=str(spam[n])
+        n+=1
+    return s
+#字符串转换到列表 注意split函数的用法，如果字符串之间有其他分隔符，则换成其他分隔符
+def strfunction(list1):
+    b=list1.split(' ')
+    return b
+#另一种写法
+def strfunction(list1):
+    a=len(list1)
+    b=[]
+    for i in range(a):
+        b+=list1[i]
     return b
