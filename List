@@ -1,0 +1,5 @@
+def listfunction(spam):
+    a=len(spam)
+    spam[a-1]='and '+spam[a-1]
+    b=','.join(spam)
+    return b
