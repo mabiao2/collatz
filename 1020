@@ -1,0 +1,13 @@
+#encoding:utf-8
+
+def changelist(spam):
+    a={}
+    for i in spam:
+         a.setdefault(i,0)
+         a[i]=a[i]+1
+    return a
+def returnlist(a):
+    b=[]
+    for i in a.keys():
+        b.append(i)
+    return b
