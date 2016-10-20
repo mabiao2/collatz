@@ -11,3 +11,33 @@ def returnlist(a):
     for i in a.keys():
         b.append(i)
     return b
+#明天改一下
+#coding:utf-8
+import random
+def sum1(spam):
+    num=0
+    for i in spam:
+        num+=i
+    return num
+
+def makescore(cou_num,stu_num):
+    score_list = [[random.randint(0,100) for i in range(stu_num)] for j in range(cou_num)]
+    return score_list
+def question2(a):
+    for i in a:
+        print(i)
+def question3(a):
+    b=[]
+    
+    for i in a:
+        b.append(sum(i))
+    print(b)
+def question4(a):
+    c=[]
+    lena=len(a)
+    b=zip(a)
+    for i in range(len(b)):
+        c.append(sum(i)/lena)
+    print(c)
+    
+    
