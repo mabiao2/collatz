@@ -11,7 +11,18 @@ def returnlist(a):
     for i in a.keys():
         b.append(i)
     return b
-#明天改一下
+'''
+定义一个20*5的二维数组，用来存储某班级20位学员的5门课的成绩；这5门课按存储顺序依次为：core C++，coreJava，Servlet，JSP和EJB。
+
+（1）循环给二维数组的每一个元素赋0~100之间的随机整数。
+
+（2）按照列表的方式输出这些学员的每门课程的成绩。
+
+（3）要求编写程序求每个学员的总分，将其保留在另外一个一维数组中。
+
+（4）要求编写程序求所有学员的某门课程的平均分
+'''
+
 #coding:utf-8
 import random
 def sum1(spam):
@@ -35,9 +46,9 @@ def question3(a):
 def question4(a):
     c=[]
     lena=len(a)
-    b=zip(a)
-    for i in range(len(b)):
-        c.append(sum(i)/lena)
+    b=zip(*a)
+    for i in b:
+        c.append(sum1(i)/lena)
     print(c)
     
     
