@@ -51,4 +51,26 @@ def question4(a):
         c.append(sum1(i)/lena)
     print(c)
     
+ #encoding:utf-8
+#使用字典描述
+import random
+'''
+def makedict(spam):
+    a=[]
+    for i in range(20): 
+        a.append({j:random.randint(70,100) for j in spam})
+    return a
     
+if __name__=="__main__":
+    cou=['C++','Math', 'Python']
+    a=makedict(cou)
+    print(a)
+'''
+def makedict(subjects):
+    return {s:random.randint(70,100) for s in subjects} 
+if __name__=="__main__":
+    for i in range(10):
+        cou=['C++','Math','Python']
+        res=makedict(cou)
+        print({str(i):res})
+
