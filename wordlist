@@ -1,0 +1,51 @@
+import bisect
+def make_list1():
+    f=open(r"E:\Python\inventPython\word.txt",'r')
+    a=[]
+    for fn in f:
+        word=fn.strip()
+        a.append(word)
+    return a
+def in_bisect(word,word_list):
+    if len(word_list)==0:
+        return False
+    i=len(word_list)//2
+    if word_list[i]==word:
+        return True
+    if word_list[i]<word:
+        return in_bisect(word,word_list[i+1:])
+    else:
+        return in_bisect(word,word_list[:i])
+
+def in_bisect2(word,word_list):
+    i=bisect.bisect_left(word_list,word)
+    if(i==len(word_list)):
+        return False
+    else:
+        return word_list[i]==word
+
+
+'''
+#两种不同的方法来检测所选单词是否在单词表里
+a=make_list1()
+a.sort()
+b=['aa','ba','ds']
+for word in b:
+    print(word,in_bisect(word,a))
+for word1 in b:
+    print(word1,in_bisect2(word1,a))
+
+#寻找反转单词
+a=make_list1()
+for i in a:
+    j=i[::-1]
+    if in_bisect(j,a)==True:
+        print(i)
+#寻找组合单词
+a=make_list1()
+for i in a:
+    for j in a:
+        if i!=j:
+            s=i+j
+            if in_bisect(s,a):
+                print(s)
