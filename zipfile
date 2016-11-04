@@ -1,0 +1,27 @@
+#create the zipfile in pyhton3
+#每次运行之后，改变名称，保证每次更改之后的数据保存
+import zipfile
+import shutil,os
+import send2trash
+os.chdir(r'C:\Users\zhongfang\Desktop')     #改变工作目录，默认目录为py文件所在地
+def zipfile_function(path):
+	path = os.path.abspath(path)
+	num=1
+	while True:
+		
+		zipfile_name=os.path.basename(path)+'_'+str(num)+'.zip'
+		if not os.path.exists(zipfile_name):
+			break
+		num=num+1
+	print('creating zipfile:'+zipfile_name)
+	zipfile_create=zipfile.ZipFile(zipfile_name,'w')
+	for foldername, subfolders, filenames in os.walk(path):
+		print('Adding files in %s...' % (foldername))
+		for filename in filenames:
+			newbase= os.path.basename(path)+'_'
+			if filename.startswith(newbase) and filename.endswith('.zip'):
+				continue
+			zipfile_create.write(os.path.join(foldername, filename))
+	zipfile_create.close()
+	print('Done')
+zipfile_function(r'C:\Users\zhongfang\Desktop\QGIS 2.18')
