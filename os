@@ -25,3 +25,37 @@ shutil.rmtree(r'F:\QGIS 2.18\new')
 #pip3 install send2trash
 #import send2trash 既可以删除文件也可以删除文件夹
 send2trash.send2trash(r'F:\QGIS 2.18\new\new1')
+#显示所使用的系统
+os.name
+#重命名文件或文件夹
+os.rename(r'F:\QGIS 2.18\new',r'F:\QGIS 2.18\new23')
+#把一个文件拷到另一个文件夹下
+shutil.copy('C:\\spam.txt', 'C:\\delicious')
+把一个文件拷到另一个文件夹下并重新命名
+shutil.copy('eggs.txt', 'C:\\delicious\\eggs2.txt')
+#把文件夹内容拷贝到一个新目录下，该目录必须是新建
+shutil.copytree(r'F:\QGIS 2.18\I04-2015-000015',r'F:\QGIS 2.18\new1')
+#把文件及文件夹移动到新的目录下
+shutil.move(r'F:\QGIS 2.18\I04-2015-000015',r'F:\QGIS 2.18\new')
+#文件或文件夹改名
+os.rename(r'F:\QGIS 2.18\new',r'F:\QGIS 2.18\new23')
+#对多层文件及文件夹改名
+os.renames(r'F:\QGIS 2.18\new2\I04-2015-000015',r'F:\QGIS\newname\123')
+#分别取得目录及文件
+a=os.path.split(r'F:\QGIS 2.18\QGIS1\newname\123\1.tif')
+#判断是目录还是文件
+os.path.isdir(),os.path.isfile()
+#os.path.exists()函数用来检验给出的路径是否真地存在
+os.path.exists(r'F:\QGIS 2.18\QGIS1\newname\1234')
+#获得绝对路径
+os.path.abspath()
+#连接目录与文件名或目录
+os.path.join(r'F:\QGIS 2.18\QGIS1\newname\123','1.tif')
+#返回文件名或目录此文件可以是不存在的（最后没有文件，则返回文件夹名称）
+os.path.basename(r'F:\QGIS 2.18\QGIS1\newname\123\1.tifds')
+#返回文件路径
+os.path.dirname(r'F:\QGIS 2.18\QGIS1\newname\123\1.tifds')
+#获得文件大小
+
+
+
