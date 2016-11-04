@@ -56,6 +56,17 @@ os.path.basename(r'F:\QGIS 2.18\QGIS1\newname\123\1.tifds')
 #返回文件路径
 os.path.dirname(r'F:\QGIS 2.18\QGIS1\newname\123\1.tifds')
 #获得文件大小
+os.path.getsize(r'F:\QGIS 2.18\QGIS1\newname\123\1.tif')
+#分离文件与扩展名
+os.path.splitext(r'F:\QGIS 2.18\QGIS1\newname\123\1.tif')
+#规范化路径
+os.path.normpath(path) 
+#os.walk遍历文件夹下所有文件及文件夹
+for dirpath,dirnames,filenames in os.walk(r'F:\QGIS 2.18'):
+	for dirname in dirnames:
+		print(os.path.join(dirpath,dirname))
+	for filename in filenames:
+		print(os.path.join(dirpath,filename))
 
 
 
