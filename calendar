@@ -1,0 +1,24 @@
+#日历模块的使用介绍
+#Python 3
+import calendar
+#判断年份是否是闰年，如果是则返回True
+#calendar.leapdays(y1, y2)   --- 获取两个年份之间闰年数 
+calendar.isleap(2000)
+#输出具体的某一年某一个月的日历
+for j in range(2015,2020):
+	for i in range(1,13):
+		cal=calendar.month(j,i)
+		print(cal)
+#按季度输出日历
+calendar.prcal(2013)
+#返回指定年的日历
+a=calendar.calendar (2011)
+print(a)
+#返回某个月的weekday的第一天和这个月的所有天数
+calendar.monthrange(year, month)
+#返回某个月以一周为元素的序列
+calendar.monthcalendar(year,month)
+#中国的时间和国外的差异之一在于，设置每周的起始日期码，0（星期一）到6（星期日）
+calendar.setfirstweekday(6)
+#返回给定日期的日期码。0（星期一）到6（星期日）。月份为 1（一月） 到 12（12月）。
+calendar.weekday(year,month,day)
